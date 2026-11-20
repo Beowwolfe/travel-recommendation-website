@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wayfarer | Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="brand" href="travel_recommendation.html">Wayfarer</a>
+  <a href="travel_recommendation.html">Home</a>
+  <a href="about_us.html">About Us</a>
+  <a href="contact_us.html">Contact Us</a>
+</nav>
+<main class="page">
+  <h1>Contact us</h1>
+  <p>Questions or a destination we should add? Send us a note.</p>
+  <form id="contactForm">
+    <div><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+    <div><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+    <div><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <p id="thanks" role="status"></p>
+</main>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('thanks').textContent = 'Thanks, ' + this.name.value + '! We will reply soon.';
+  this.reset();
+});
+</script>
+</body>
+</html>
